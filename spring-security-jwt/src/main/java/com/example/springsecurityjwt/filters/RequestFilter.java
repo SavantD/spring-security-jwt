@@ -1,6 +1,6 @@
 package com.example.springsecurityjwt.filters;
 
-import com.example.springsecurityjwt.services.MyUserDetailsService;
+import com.example.springsecurityjwt.services.CustomUserDetailsService;
 import com.example.springsecurityjwt.util.JwtUtil;
 import io.jsonwebtoken.JwtException;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,7 +21,7 @@ import java.io.IOException;
 public class RequestFilter extends OncePerRequestFilter {
 
     @Autowired
-    MyUserDetailsService userDetailsService;
+    CustomUserDetailsService userDetailsService;
 
     @Autowired
     JwtUtil jwtUtil;
