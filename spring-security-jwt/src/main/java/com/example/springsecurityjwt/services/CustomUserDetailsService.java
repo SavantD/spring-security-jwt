@@ -17,6 +17,6 @@ public class CustomUserDetailsService implements UserDetailsService {
         if (!hardCodedUser.getUsername().equals(username)) {
             throw new UsernameNotFoundException("Incorrect Credentials.");
         }
-        return new User("test", "test", new ArrayList<>());
+        return hardCodedUser;
     }
 }
