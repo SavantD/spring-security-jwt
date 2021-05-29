@@ -2,7 +2,7 @@ package com.example.springsecurityjwt;
 
 import com.example.springsecurityjwt.models.AuthRequest;
 import com.example.springsecurityjwt.models.AuthResponse;
-import com.example.springsecurityjwt.services.MyUserDetailsService;
+import com.example.springsecurityjwt.services.CustomUserDetailsService;
 import com.example.springsecurityjwt.util.JwtUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -22,14 +22,14 @@ public class HelloController {
     private AuthenticationManager authenticationManager;
 
     @Autowired
-    private MyUserDetailsService userDetailsService;
+    private CustomUserDetailsService userDetailsService;
 
     @Autowired
     private JwtUtil jwtUtil;
 
     @RequestMapping({"/hello"})
     public String hello() {
-        return "Hello World!";
+        return "Welcome To Spring Security!";
     }
 
     @RequestMapping(value = "/authenticate", method = RequestMethod.POST)
